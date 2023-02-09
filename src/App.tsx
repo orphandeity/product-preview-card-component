@@ -36,7 +36,7 @@ function App() {
 
           <button className="focus:ring-none flex items-center justify-center gap-3 rounded-lg bg-dark_cyan py-4 font-medium text-white hover:bg-dark_cyan_alt focus:border-none">
             <CartIcon />
-            <p>Add to Cart</p>
+            Add to Cart
           </button>
         </div>
       </div>
