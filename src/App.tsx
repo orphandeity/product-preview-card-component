@@ -3,15 +3,20 @@ import mobileImage from './assets/image-product-mobile.jpg';
 
 function App() {
   return (
-    <main className="flex h-screen items-center justify-center">
-      <div className="flex max-w-2xl overflow-hidden rounded-xl bg-white shadow">
+    <main className="relative flex h-screen items-center justify-center">
+      <div className="flex max-w-sm flex-col overflow-hidden rounded-xl bg-white shadow desktop:max-w-2xl desktop:flex-row">
         <img
           src={desktopImage}
           alt="Gabrielle Essence Eau De Parfum"
-          className="w-1/2"
+          className="hidden w-1/2 desktop:block"
+        />
+        <img
+          src={mobileImage}
+          alt="Gabrielle Essence Eau De Parfum"
+          className="desktop:hidden"
         />
         <div className="flex flex-col justify-between gap-4 p-8">
-          <p className="uppercase tracking-[0.2rem] text-dark_grayish_blue">
+          <p className="uppercase tracking-[0.2rem] text-dark_grayish_blue/90">
             Perfume
           </p>
 
@@ -19,38 +24,50 @@ function App() {
             Gabrielle Essence Eau De Parfum
           </h1>
 
-          <p className="leading-7 text-dark_grayish_blue">
+          <p className="leading-7 text-dark_grayish_blue/90">
             A floral, solar and voluptuous interpretation composed by Olivier
             Polge, Perfumer-Creator for the House of CHANEL.
           </p>
 
           <div className="flex items-center gap-6">
             <p className="font-serif text-4xl text-dark_cyan">$149.99</p>
-            <p className="text-dark_grayish_blue line-through">$169.99</p>
+            <p className="text-dark_grayish_blue/90 line-through">$169.99</p>
           </div>
 
-          <button className="flex items-center justify-center gap-2 rounded-lg bg-dark_cyan py-4 font-medium text-white hover:bg-dark_cyan_alt">
+          <button className="focus:ring-none flex items-center justify-center gap-3 rounded-lg bg-dark_cyan py-4 font-medium text-white hover:bg-dark_cyan_alt focus:border-none">
             <CartIcon />
             <p>Add to Cart</p>
           </button>
         </div>
       </div>
+      <Attribution />
     </main>
   );
 }
 
 const Attribution = () => {
   return (
-    <div>
+    <div className="absolute bottom-0 mx-auto flex gap-2 pb-2 text-xs">
       <p>
         Challenge by{' '}
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+        <a
+          href="https://www.frontendmentor.io?ref=challenge"
+          target="_blank"
+          className="text-blue-500"
+        >
           Frontend Mentor
         </a>
         .
       </p>
       <p>
-        Coded by <a href="#">Jeff R Williams</a>.
+        Coded by{' '}
+        <a
+          href="https://www.frontendmentor.io/profile/orphandeity"
+          className="text-blue-500"
+        >
+          Jeff R Williams
+        </a>
+        .
       </p>
     </div>
   );
